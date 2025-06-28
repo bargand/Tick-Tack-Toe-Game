@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quantum Tic-Tac-Toe | Ultimate Edition</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Fredoka+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <button class="settings-btn" id="settingsBtn">
+      <i class="fas fa-cog"></i>
+    </button>
+
+    <div class="app-container">
+      <header class="header">
+        <h1 class="title">Quantum Tic-Tac-Toe</h1>
+        <p class="subtitle">The ultimate strategic experience</p>
+
+        <div class="game-info">
+          <div class="turn-indicator" id="turnIndicator">
+            <span class="turn-icon x" id="turnIcon">X</span>
+            <span id="turnText">Your turn</span>
+          </div>
+
+          <div class="score-display">
+            <div class="score-box x">
+              <div class="score-label">Player X</div>
+              <div class="score-value" id="scoreX">0</div>
+            </div>
+            <div class="score-box o">
+              <div class="score-label">Player O</div>
+              <div class="score-value" id="scoreO">0</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="game-board" id="board">
+        <div class="cell" data-cell-index="0"></div>
+        <div class="cell" data-cell-index="1"></div>
+        <div class="cell" data-cell-index="2"></div>
+        <div class="cell" data-cell-index="3"></div>
+        <div class="cell" data-cell-index="4"></div>
+        <div class="cell" data-cell-index="5"></div>
+        <div class="cell" data-cell-index="6"></div>
+        <div class="cell" data-cell-index="7"></div>
+        <div class="cell" data-cell-index="8"></div>
+      </div>
+
+      <div class="controls">
+        <button class="btn btn-primary" id="restartBtn">
+          <i class="fas fa-sync-alt"></i> Restart
+        </button>
+        <button class="btn btn-secondary" id="newGameBtn">
+          <i class="fas fa-plus-circle"></i> New Game
+        </button>
+        <button class="btn btn-warning" id="historyBtn">
+          <i class="fas fa-history"></i> History
+        </button>
+      </div>
+    </div>
+
+    <!-- Game Result Modal -->
+    <div class="modal" id="resultModal">
+      <div class="modal-content">
+        <div class="modal-icon" id="modalIcon">🎉</div>
+        <h2 class="modal-title" id="modalTitle">Victory!</h2>
+        <p class="modal-text" id="modalText">Player X has won the game!</p>
+        <button class="modal-btn" id="modalBtn">Continue</button>
+      </div>
+    </div>
+
+    <!-- Settings Panel -->
+    <div class="settings-panel" id="settingsPanel">
+      <h2 class="settings-title">
+        Game Settings
+        <button class="settings-close" id="settingsClose">
+          <i class="fas fa-times"></i>
+        </button>
+      </h2>
+
+      <div class="settings-group">
+        <label class="settings-label">Game Mode</label>
+        <div class="settings-option">
+          <input
+            type="radio"
+            id="modePvP"
+            name="gameMode"
+            value="pvp"
+            checked
+          />
+          <label for="modePvP">Player vs Player</label>
+        </div>
+        <div class="settings-option">
+          <input type="radio" id="modePvC" name="gameMode" value="pvc" />
+          <label for="modePvC">Player vs Computer (Coming Soon)</label>
+        </div>
+      </div>
+
+      <div class="settings-group">
+        <label class="settings-label">Theme</label>
+        <div class="settings-option">
+          <input
+            type="radio"
+            id="themeLight"
+            name="gameTheme"
+            value="light"
+            checked
+          />
+          <label for="themeLight">Light Mode</label>
+        </div>
+        <div class="settings-option">
+          <input type="radio" id="themeDark" name="gameTheme" value="dark" />
+          <label for="themeDark">Dark Mode (Coming Soon)</label>
+        </div>
+      </div>
+
+      <div class="settings-group">
+        <label class="settings-label">Animations</label>
+        <div class="settings-option">
+          <input type="checkbox" id="animationsOn" name="animations" checked />
+          <label for="animationsOn">Enable Animations</label>
+        </div>
+      </div>
+
+      <div class="settings-footer">
+        <button class="btn btn-secondary" id="settingsCancel">Cancel</button>
+        <button class="btn btn-primary" id="settingsSave">Save Settings</button>
+      </div>
+    </div>
+
+    <!-- Game History Panel -->
+    <div class="history-panel" id="historyPanel">
+      <h2 class="history-title">
+        Game History
+        <button class="history-close" id="historyClose">
+          <i class="fas fa-times"></i>
+        </button>
+      </h2>
+      <ul class="history-list" id="historyList">
+        <!-- History items will be added here dynamically -->
+      </ul>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
