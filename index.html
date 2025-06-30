@@ -14,14 +14,14 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
     <button class="settings-btn" id="settingsBtn">
       <i class="fas fa-cog"></i>
     </button>
 
     <div class="app-container">
       <header class="header">
-        <h1 class="title">Quantum Tic-Tac-Toe</h1>
+        <h1 class="title">Bargand Tic-Tac-Toe</h1>
         <p class="subtitle">The ultimate strategic experience</p>
 
         <div class="game-info">
@@ -101,7 +101,7 @@
         </div>
         <div class="settings-option">
           <input type="radio" id="modePvC" name="gameMode" value="pvc" />
-          <label for="modePvC">Player vs Computer (Coming Soon)</label>
+          <label for="modePvC">Player vs Bot</label>
         </div>
       </div>
 
